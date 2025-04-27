@@ -29,6 +29,7 @@ Source0:        %{name}-%{version}.tar.gz
 BuildArch:      riscv64
 
 %global debug_package %{nil}
+%global __brp_check_rpaths %{nil}
 
 %description
 This is a RPM package for ${PACKAGE_NAME}.
