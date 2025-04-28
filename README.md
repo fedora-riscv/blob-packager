@@ -45,3 +45,11 @@ Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.eS5Uji
 + exit 0
 RPM package created at: /builddir/rpmbuild/RPMS/examplepkg-1.0-1.fc41.riscv64.rpm
 ```
+
+在不希望使用 mock 环境的情况下，您也可以使用 Podman / Docker 来创建 rpm 
+
+```
+podman run --rm -v $PWD/result:/rpmbuild/RPMS:z -v $PWD/examplepkg-1.0:/examplepkg-1.0:ro -it ghcr.io/fedora-riscv/blob-packager:latest examplepkg-1.0 examplepkg 1.0
+```
+
+生成的 rpm 文件将会被放置到 result/ 目录
